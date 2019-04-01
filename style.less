@@ -1,0 +1,341 @@
+@padding_margin: 10%;
+@body_background: rgba(206, 222, 238, .5);
+@body_page_color: #fff;
+@h2_color_text: #828282;
+@deep_blue: #0218A3;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style-type: none;
+}
+
+body{
+    background: @body_background;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3{
+    color: @deep_blue;
+}
+
+a{
+    color: @deep_blue;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+a:hover{
+    color: darken(@deep_blue,12%);
+}
+
+.body_page{
+    position: relative;
+    background: @body_page_color;
+    width: 1025px;
+    margin: 4% auto;
+    padding-bottom: 3%;
+    border: 1px solid @deep_blue;
+}
+
+.logo{
+    background: #efc437 ;
+    color: #fff;
+    width: 165px;
+    height: 100px;
+    position: absolute;
+    top: -20px;
+    left: 10%;
+    p{
+        display: block;
+        margin-top: 15%;
+        padding: 0px;
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: 800;
+    }
+}
+
+.phone_number{
+    text-align: right;
+    padding-top: 15px;
+    padding-right: @padding_margin;
+}
+
+header{
+    margin-left: @padding_margin;
+    margin-top: 9%;
+    margin-bottom: 5%;
+    width: 61%;
+    h1{
+        font-weight: 700;
+        margin-bottom: 1%;
+    }
+    h2{
+        color: #af4305;
+        font-weight: 600;
+        font-size: 1.25em;
+    }
+}
+
+.foto_content div{
+    display: inline-block;
+    margin-right: -5px;
+    height: 480px;
+}
+
+.image_back{
+    background: url(image/image_back.jpg) no-repeat;
+    width: 70%;
+    height:100%;
+     background-size: contain;
+}
+
+.second_image_back{
+    background: url(image/second_image_back1.png) rgba(239, 196, 55, .7);
+    width: 30.1%;
+    height:100%;
+}
+
+form{
+    position: absolute;
+    right: 10%;
+    top: 16%;
+    width: 35%;
+    background: #efc437;
+    border: 1px solid @deep_blue;
+    ul{
+        padding: 15px;
+        label{
+            color: #627fa9;
+        }
+        input{
+            width: 97.5%;
+            height: 100%;
+            padding-left: 5px;
+            border: 1px solid @body_background;
+        }
+        textarea{
+            width: 97.5%;
+            padding-left: 5px;
+            padding-top: 10px;
+            border: 1px solid @body_background;
+        }
+        li{
+            margin-bottom: 15px;
+            height: 35px;
+            display: block; 
+            line-height: 35px;
+        }
+        .textarea{
+            height: auto;
+            font-family: inherit;
+        }
+        .sent_file{
+            padding-left: 0;
+        }
+        .buttons{
+            display: flex;
+            display: -webkit-flex;
+            button, div{
+                -webkit-flex-grow: 2; 
+                flex-grow: 2;
+                background: @deep_blue;
+                color: #fff;
+                border: none;
+                margin-right: 3px;
+                cursor: pointer;
+            }
+            div{
+              margin-right: 0; 
+                a{
+                    display: block;
+                    text-align: center;
+                    font-weight: 100;
+                }
+            }
+            button:last-child{
+                margin-right: 0;
+            }
+            button:hover, div:hover{
+                background: darken(@deep_blue,12%);
+            }
+            button:active, div:active{
+                background: #A34D37;
+            }
+            a{
+                color: inherit;
+            }
+        }
+    }
+}
+
+h2{
+    margin: 3% 0;
+}
+
+.advantages{
+    margin-left: @padding_margin;
+    margin-right: @padding_margin;
+    margin-top: 5%;
+    ul{
+       display: -webkit-flex; 
+        display: flex;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap; 
+        img{
+            height: 45px;
+        }
+        li{
+            margin-bottom: 1%;
+        }
+    }
+}
+
+.card_section{
+    display: -webkit-flex; 
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 5%;
+    .card{
+        -webkit-flex-basis: 30%; 
+        flex-basis: 30%;
+        text-align: justify;
+        img{
+            width: 30%;
+            margin: 15px auto;
+            display: block;
+        }
+        h3{
+            margin-bottom: 15px;
+            text-align: center;
+        }
+    }
+}
+
+#map{
+    margin: 0 @padding_margin;
+    background: url(image/map.png) no-repeat;
+    background-size: cover;
+    height: 400px;
+}
+
+@media screen and (max-width: 1030px){
+    .body_page{
+        width: 90%;
+    }
+    .card_section{
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 900px){
+    header{
+        width: 80%;
+        text-align: justify;
+        margin-bottom: 9%;
+    }
+    form{
+        width: 320px;
+    }
+    .image_back{
+        background-size: cover;
+    }
+    .advantages{
+        margin-top: 9%;
+    }
+    #map{
+        background-size: contain;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .card_section .card{
+        flex-basis: 45%;
+    }
+    form{
+        top: 14.5%;
+    }
+    .advantages ul{
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 635px){
+    header{
+        margin-bottom: 10%;
+    }
+    form {
+        top: 15.5%;
+    }
+    .advantages {
+        margin-top: 12%;
+    }
+    a{
+        font-size: .8em;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .logo{
+        width: 130px;
+        height: 70px;
+        p{
+            font-size: 1em;
+        }
+    }
+    header{
+        margin-bottom: 15%;
+    }
+    .advantages {
+        margin-top: 18%;
+    }
+    .card_section .card img {
+        width: 36%;
+    }
+}
+
+@media screen and (max-width: 460px){
+    .logo{
+        left: 3%;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    form{
+        width: 90%;
+        right: 5%;
+    }
+    .card_section .card {
+        flex-basis: 100%;
+    }
+    .phone_number{
+        padding-right: 2%
+    }
+    header {
+        margin-bottom: 24%;
+    }
+    form {
+        top: 17%;
+    }
+    .advantages {
+        margin-top: 25%;
+    }
+    h2 {
+        margin: 7% 0;
+    }
+}
+@media screen and (max-width: 350px){
+    .phone_number{
+        padding-top: 49px;
+    }
+}
